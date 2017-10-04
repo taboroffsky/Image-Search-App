@@ -23,14 +23,15 @@ export class ImageListComponent implements OnInit {
     this.searhing = true;
     return this._imageServie.getImage(query).subscribe(
       data => this.handleSucces(data),
-      error => this.handleError(error),
-      () => this.searhing = false
+      error => this.handleError(error)
+      //() => this.searhing = false
     );
 }
 
   handleSucces(data){
     this.imagesFound = true;
     console.log(data.hits);
+    console.log(this.searhing);
     this.images = data.hits;
   }
 

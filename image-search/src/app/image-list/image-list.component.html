@@ -3,7 +3,7 @@
 <button (click)="searchImages(searchQuery)" type="button">Find Images</button>
 
 
-<p *ngIf="searhing">
+<div *ngIf="searhing">
 
     <div *ngFor="let image of images" class=image-container>
         <img src="{{ image.webformatURL }}" >
@@ -13,4 +13,4 @@
         <p>Likes: {{image.likes}}</p>
     </div>
 
-</p>
+</div>
