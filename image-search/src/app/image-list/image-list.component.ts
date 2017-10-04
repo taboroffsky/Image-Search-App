@@ -12,6 +12,7 @@ export class ImageListComponent implements OnInit {
 
   images: any[];
   imagesFound:boolean = false;
+  searhing:boolean = false;
 
   constructor(private _imageServie:ImageService) { 
 
@@ -19,10 +20,11 @@ export class ImageListComponent implements OnInit {
 
 
   searchImages(query:string){    
+    this.searhing = true;
     return this._imageServie.getImage(query).subscribe(
       data => this.handleSucces(data),
       error => this.handleError(error),
-      () => console.log("Request complete")!
+      () => this.searhing = false
     );
 }
 
