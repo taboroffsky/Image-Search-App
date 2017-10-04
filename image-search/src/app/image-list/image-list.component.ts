@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../shared/image.service';
 
+import 'rxjs/add/operator/map';
+
 @Component({
   selector: 'app-image-list',
   templateUrl: './image-list.component.html',
